@@ -36,19 +36,19 @@ public class B_Switch {
 		int input = sc.nextInt();
 		
 		switch(input) {
-		case 1: {
-			System.out.print(input + "층 입니다.");
-			break;
-		}
-		case 2: {
-			System.out.print(input + "층 입니다.");
-			break;
-		}
-		case 3: {
-			System.out.print(input + "층 입니다.");
-			break;
-		}
-		
+			case 1: {
+				System.out.print(input + "층 입니다.");
+				break;
+			}
+			case 2: {
+				System.out.print(input + "층 입니다.");
+				break;
+			}
+			case 3: {
+				System.out.print(input + "층 입니다.");
+				break;
+			}
+			default : System.out.print("잘못 입력하셨습니다.");
 		}
 		
 		
