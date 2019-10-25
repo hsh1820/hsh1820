@@ -11,7 +11,8 @@ public class Run {
 		//aif.method3();
 		//aif.method4();
 		B_Switch sw = new B_Switch();
-		sw.method1();
+		//sw.method1();
+		sw.method2();
 	}
 }
 

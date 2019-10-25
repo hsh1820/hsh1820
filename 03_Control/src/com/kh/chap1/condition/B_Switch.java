@@ -38,7 +38,7 @@ public class B_Switch {
 		switch(input) {
 			case 1: {
 				System.out.print(input + "층 입니다.");
-				break;
+				//break;
 			}
 			case 2: {
 				System.out.print(input + "층 입니다.");
@@ -60,4 +60,41 @@ public class B_Switch {
 		
 		
 	}
+
+	public void method2() {
+		// switch 문을 이용한 권한 부여
+		Scanner sc = new Scanner(System.in);
+		System.out.print("등급을 작성해 주세요.: ");
+		// 관리자, 매니저, 회원
+		
+		String grade = sc.nextLine();
+		
+		switch(grade) {
+		case "관리자" : System.out.println("강퇴");
+		case "매니저" : System.out.println("등록");
+		case "회원" : System.out.println("조회"); break;
+		
+		default : System.out.println("잘못 입력함");
+		
+		}
+			
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 }
