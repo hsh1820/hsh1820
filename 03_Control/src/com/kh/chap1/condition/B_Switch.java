@@ -156,7 +156,7 @@ public class B_Switch {
 				break;
 			case 2:
 				day =28;
-				System.out.println(month + "월은 "+ day + "일 입니다.");
+				System.out.println(month + "월은 "+ day  + "일 또는 "+ (day+1) + "일 입니다.");
 				break;
 			case 4:
 			case 6:
