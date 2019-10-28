@@ -12,7 +12,9 @@ public class Run {
 		//aif.method4();
 		B_Switch sw = new B_Switch();
 		//sw.method1();
-		sw.method2();
+		//sw.method2();
+		//sw.method3();
+		sw.method4();
 	}
 }
 
