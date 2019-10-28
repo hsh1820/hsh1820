@@ -118,17 +118,103 @@ public class LoopPractice1 {
 	public void practice9()	{
 		System.out.print("자연수 하나를 입력하세요  : ");
 		int num1 = sc.nextInt();
+		int count = 0;
 		
-		if (num1 %2 ==0 && num1 % 3 ==0) {
-			System.out.print();
-		}
+		for (int i = 1; i <= num1; i++) {
+			//System.out.print(i+" ");
 			
-	
-	
-	
+			if (i % 2 == 0 || i % 3 == 0) {
+				System.out.print(i + " ");				
+			}
+			if (i % 2 == 0 && i % 3 == 0 ) {
+				count +=1;
+			}
+			
+			
+		}
+		
+		System.out.print("\ncount : "+ count);
 	
 	}
+	
+	public void practice10()	{
+		System.out.print("자연수 하나를 입력하세요  : ");
+		int num1 = sc.nextInt();
+		
+		int i;
+		int j;
+		int k; 
+
+		 
+
+		for(i=1; i<= num1; i++) { 
+		           for(j=num1; j>i; j--) { 
+		               System.out.printf(" "); 
+		           	} 
+		           		for(k=1; k<=i; k++)  { 
+		        	   System.out.printf("*"); 
+		           		} 
+		           System.out.printf("\n"); 
+		} 
+	
+	}
+	public void practice11() {
+		System.out.print("자연수 하나를 입력하세요  : ");
+		int num1 = sc.nextInt();
+		
+		for(int i = 1; i <=num1; i++) {
+			for(int j = 1; j <=i;j++) {
+				System.out.print('*');
+			}
+			System.out.println();
+		}
+		for(int i = 1; i <=num1; i++) {
+			for(int j = num1-1; j >=i;j--) {
+				System.out.print('*');
+			}
+			System.out.println();
+		}
+	}
+	
+	public void practice12() {
+		System.out.print("자연수 하나를 입력하세요  : ");
+		int num1 = sc.nextInt();
+		
+		int i;
+		int j;
+		int k; 
+
+		 
+
+		for(i=1; i<= num1; i++) { 
+		           for(j=num1; j>i; j--) { 
+		               System.out.printf(" "); 
+		           	} 
+		           		for(k=1; k<=i; k++)  { 
+		        	   System.out.printf("*"); 
+		           		} 
+		           		for(k=1; k<i; k++)  { 
+				        	   System.out.printf("*"); 
+				           		} 
+		           System.out.printf("\n"); 
+		} 
+	
+	}
+	
+	public void practice13() {
+	//		System.out.print("정수 입력 : ");
+	//		int num1 = sc.nextInt();
+		
+		for(int i = 1; i<=5;i++) {
+			for(int j = 1; j <=5 ; j++) {
+				System.out.print('*');				
+			}
+			for(int j = 1; j <=5 ; j++) {
+				System.out.print('5');				
+			}
 			
-			
+			System.out.println();
+		}
+	}
 			
 }
