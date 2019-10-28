@@ -3,7 +3,7 @@ package com.kh.chap2.loop;
 import java.util.Scanner;
 
 public class A_For {
-	
+	Scanner sc = new Scanner(System.in);
 	// 1. for문 ( 단일 for문)
 	/*
 	 * for( 초기식; 조건식; 증감식) {
@@ -156,6 +156,122 @@ public class A_For {
 		
 		
 	}
+	
+	// ==================================================================================
+	// 2. 중첩 for문
+	public void method7( ) {
+		// 1 부터 5까지 출력되는 문장을 5줄 출력하기
+		// 123456
+		// 123456
+		// 123456
+		// 123456
+
+		for(int i = 1; i > 6; i++) { // 문장 출력 반복
+			for(int j = 1; j >= 6; j++) { // 123456 문장 반복
+				System.out.print(j); // 123456
+			}
+			System.out.println(); // 줄바꿈
+		}
+	
+	
+	}
+	
+	public void method8( ) { 
+		// 0시 0분 부터 23시 59분까지 출력하기
+		// 0시 0분
+		// 0시 1분
+		//...
+		// 23시 59분
+		int count=0 ;
+		for(int i = 0; i < 24 ; i++) {
+			for(int j =0; j < 60; j++) {
+				System.out.println(i+ "시" + j + "분");				
+				++count;
+			}
+			System.out.println(count);
+		}
+	}
+	
+	public void method9( ) {
+		 // 2단부터 9단까지 모두 출력
+		 // 2 x 1 =2 .. 2 x 9 = 18
+		 // 3 x 1 =3 .. 3 x 9 = 27
+		 // ...
+		// 9 x 1 =9 .. 9 x 9 = 81
+
+		for(int i=2;i<10;i++) {
+			for(int j = 1; j<10; j++) {
+				System.out.printf("%2d x %2d = %2d ", i, j, i*j);
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public void method10() {
+		
+		// 입력한 수 만큼 문장을 출력하는데
+		// 한 문장당 '*'를 5개씩 출력하시오
+		
+		//ex)
+		// 입력 : 3
+		// *****
+		// *****
+		// *****
+		
+		System.out.print("입력 : ");
+		
+		int input = sc.nextInt();
+		
+		for(int i = 1  ;i <= input ; i++) {
+			for(int j = 1 ; j <= 5 ; j++) {
+				System.out.print('*');
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public void method11() {
+		// 정수를 입력받아
+		// 그 수 만큼 '*'을 출력하여 사각형 모양 만들기
+		// 단, 줄 수와  칸 수가 일치하는 부분은 해당 
+		// 줄 번호 출력
+		
+		// ex)
+		// 입력 : 4
+		// 1***
+		// *2**
+		// **3*
+		// ***4
+		
+		System.out.print("입력 : ");
+		
+		int input = sc.nextInt();
+		
+		for(int i = 1  ;i <= input ; i++) {
+			for(int j = 1 ; j <= input ; j++) {
+				if(i==j) {
+					System.out.print(i);					
+				}else System.out.print('*');
+				
+			}
+			System.out.println();
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
