@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class LoopPractice1 {
 	Scanner sc = new Scanner(System.in);
+	
+	
 	public void practice1()	{
 		
 	System.out.print("1이상의 숫자를 입력하세요 : ");
@@ -34,11 +36,13 @@ public class LoopPractice1 {
 		int input = sc.nextInt();
 		
 		int hap=0;
-		
+		System.out.print("1");
 			for(int i = 1; i <= input ; i++) {
-				System.out.print(i);
+				//System.out.print(i);
 				hap += i;
-			}System.out.print(" = " + hap);
+				//if(i != input)System.out.print(" + ");
+				if(i>1)System.out.print(" + "+i);
+			} System.out.print(" = " + hap);
 		}
 	
 	public void practice4()	{
@@ -109,11 +113,20 @@ public class LoopPractice1 {
 		System.out.print("정수 입력 : ");
 			int num1 = sc.nextInt();
 			
-			for(int j = 1 ; j <= num1 ; j++) {
-				for(int i = num1; i >= j; i--) {
+//			for(int j = 1 ; j <= num1 ; j++) {
+//				for(int i = num1; i >= j; i--) {
+//					System.out.print('*');
+//		}System.out.println();
+//	}
+			
+	for(int j = num1 ; j >= 1 ; j--) {
+				for(int i = j; i >= 1; i--) {
 					System.out.print('*');
 		}System.out.println();
 	}
+			
+			
+			
 	}
 	public void practice9()	{
 		System.out.print("자연수 하나를 입력하세요  : ");
@@ -212,7 +225,6 @@ public class LoopPractice1 {
 			for(int j = 1; j <=5 ; j++) {
 				System.out.print('5');				
 			}
-			
 			System.out.println();
 		}
 	}
