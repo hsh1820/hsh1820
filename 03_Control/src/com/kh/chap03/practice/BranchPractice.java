@@ -146,7 +146,7 @@ for(int i= input ;i>=1;i--) {
 		System.out.print("정수2: ");
 		int num2 = sc.nextInt();
 		
-		sc.nextLine(); // 
+		sc.nextLine(); // 입력버퍼에 남아있는 개행문자 제거용 
 
 		switch(opt) {
 		case "+" :
