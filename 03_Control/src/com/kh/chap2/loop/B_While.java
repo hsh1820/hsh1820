@@ -111,7 +111,7 @@ public class B_While {
 		
 		String str =""; // 입력
 		// 참조값은 있되 실질적인 데이터는 없음
-		//		String str =null; // 공간이 비어있다. == 참조하는 것이 없다. (둘중 하나 사용)
+		//		String str =null; // 공간이 비어있다. == 참조하는 것이 없다. 
 		//		String str;    	  // str 쓰레기 값 들어가있음. 
 		
 		String sen = ""; // 입력받은 문자열 문장으로 합치는 변수
