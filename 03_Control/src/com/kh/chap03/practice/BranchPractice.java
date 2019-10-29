@@ -114,6 +114,25 @@ for(int i= input ;i>=1;i--) {
 		
 	}
 
+	public void practice5_1() {
+		System.out.print("시작 숫자 : ");
+		int start = sc.nextInt();
+		System.out.print("공차 : ");
+		int num = sc.nextInt();
+		
+//		int count = 0;
+//		for(int i =start ; ; i+=num) {
+		for(int i =start, count=0 ;count <= 10 ; i+=num, count++) { // 방법은 있으나 가독성이 떨어짐
+
+			System.out.print(i + " ");
+//			count++;
+
+//			if(count == 10 ) {
+//				break;
+//			}
+		}
+		
+	}
 	public void practice6() {
 //		연산자(+, -, *, /, %) : /
 //		정수1 : 10 
@@ -132,9 +151,9 @@ for(int i= input ;i>=1;i--) {
 		
 //		연산자(+, -, *, /, %) : exit
 //		프로그램을 종료합니다.
-		boolean tf = true;
+//		boolean tf = true;
 		
-		while(tf) {
+		while(true) {
 //		sc.nextLine();
 		System.out.print("연산자(+,-,*,/,%) : ");
 		String opt = sc.nextLine();
@@ -148,7 +167,7 @@ for(int i= input ;i>=1;i--) {
 		System.out.print("정수2: ");
 		int num2 = sc.nextInt();
 
-		sc.nextLine(); // 입력버퍼에 남아있는 개행문자 제거용 
+		sc.nextLine(); // 입력버퍼에 남아있는 개행문자 제거용  \r\n
 		
 		switch(opt) {
 		case "+" :

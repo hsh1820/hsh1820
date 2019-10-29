@@ -11,5 +11,6 @@ public class PracticeRun {
 //		bp.practice4();
 //		bp.practice5();
 		bp.practice6();
+//		bp.practice5_1();
 	}
 }
