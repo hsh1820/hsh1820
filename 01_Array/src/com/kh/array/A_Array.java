@@ -1,7 +1,9 @@
 package com.kh.array;
 
+import java.util.Scanner;
+
 public class A_Array {
-	
+	Scanner sc =new Scanner(System.in);
 	// 배열
 	// - 같은 자료형의 변수를 하나의 묶음으로 다루는 것.
 	// - 저장된 값마다 인덱스가 지정된다.
@@ -60,5 +62,39 @@ public class A_Array {
 		}
 		System.out.println(arr);
 	}
+	
+	public void method2() {
+		// 사용자가 지정한 크기만큼의 배열을 할당하고
+		// 그 배열에 1부터 지정한 크기만큼의 숫자를 저장 및 출력
+		System.out.print("할당할 크기 : ");
+		int size = sc.nextInt();
+		
+		// 입력받은 크기만큼의 배열 선언 및 할당
+		int[] arr = new int[size];
+		
+		for(int i = 0; i<arr.length;i++) {
+			arr[i] = i+1;
+			System.out.println(arr[i]);
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
