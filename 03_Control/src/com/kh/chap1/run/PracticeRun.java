@@ -1,6 +1,6 @@
 package com.kh.chap1.run;
 
-import com.kh.chap01.practice.ControlPractice;
+import com.kh.chap1.practice.ControlPractice;
 
 public class PracticeRun {
 	public static void main(String[] args) {

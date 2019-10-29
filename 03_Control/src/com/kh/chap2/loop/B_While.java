@@ -111,7 +111,7 @@ public class B_While {
 		
 		String str =""; // 입력
 		// 참조값은 있되 실질적인 데이터는 없음
-		//		String str =null; // 공간이 비어있다. == 참조하는 것이 없다. (둘중 하나 사용)
+		//		String str =null; // 공간이 비어있다. == 참조하는 것이 없다. 
 		//		String str;    	  // str 쓰레기 값 들어가있음. 
 		
 		String sen = ""; // 입력받은 문자열 문장으로 합치는 변수
@@ -126,6 +126,39 @@ public class B_While {
 		}while(!str.equals("exit")); // exit
 		
 		System.out.println(sen);
+	}
+	
+	public void method7() {
+		// do ~ while 을 이용하여 메뉴화면 구성하기
+		int input = 0;
+		
+		do {
+				System.out.println("1. 메소드 1 실행");
+				System.out.println("2. 메소드 2 실행");
+				System.out.println("3. 메소드 3 실행");
+				System.out.println("4. 메소드 4 실행");
+				System.out.println("5. 메소드 5 실행");
+				System.out.println("6. 메소드 6 실행");
+				System.out.println("0. 종료");
+				System.out.print("메뉴 선택 ==> ");
+				input = sc.nextInt();
+				
+				switch(input) {
+				case 1 : method1(); break;
+				case 2 : method2(); break;
+				case 3 : method3(); break;
+				case 4 : method4(); break;
+				case 5 : method5(); break;
+				case 6 : method6(); break;
+				case 0 : System.out.println("프로그램을 종료합니다."); break;
+				default : System.out.println("잘못 입력하셨습니다.");
+				}
+				
+		} while(input!=0);
+		
+		
+		
+		
 	}
 	
 	

@@ -1,6 +1,6 @@
-package com.kh.chap02.run;
+package com.kh.chap2.run;
 
-import com.kh.chap02.practice.LoopPractice1;
+import com.kh.chap2.practice.LoopPractice1;
 
 public class PracticeRun1 {
 	public static void main(String[] args) {
