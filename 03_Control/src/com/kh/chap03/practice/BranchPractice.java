@@ -2,6 +2,7 @@ package com.kh.chap03.practice;
 
 import java.util.Scanner;
 
+
 public class BranchPractice {
 	Scanner sc = new Scanner(System.in);
 	
@@ -23,7 +24,8 @@ public class BranchPractice {
 		}while(input < 0);
 	}
 	
-	
+	 
+
 	
 	//	for(int i =0; i<=input;i++) {
 	//		System.out.print(i+" ");
@@ -145,9 +147,9 @@ for(int i= input ;i>=1;i--) {
 		int num1 = sc.nextInt();
 		System.out.print("정수2: ");
 		int num2 = sc.nextInt();
-		
-		sc.nextLine(); // 입력버퍼에 남아있는 개행문자 제거용 
 
+		sc.nextLine(); // 입력버퍼에 남아있는 개행문자 제거용 
+		
 		switch(opt) {
 		case "+" :
 			System.out.printf("%2d %s%2d = %2d\n",num1,opt,num2,num1+num2);break;
