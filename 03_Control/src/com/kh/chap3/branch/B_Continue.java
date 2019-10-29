@@ -24,6 +24,24 @@ public class B_Continue {
 	public void method2() {
 		// 2~9 의 구구단 중 홀수단만 출력하기
 		
+
+		for(int dan =2 ; dan <=9 ; dan++) {
+			if(dan % 2 == 0 ) {
+				continue;
+			}
+			System.out.println("=====" + dan + "단=====");
+			
+			for(int su =1; su <=9; su++) {
+				System.out.printf("%2d x %2d = %2d ", dan, su, dan*su);
+			}System.out.println();
+		}
+		
+		
+		
+		
+		
+		
+		
 	}
 }
 
