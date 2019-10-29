@@ -38,22 +38,6 @@ public class A_For {
 		for(int i=0; i <= 10 ; i++) {
 			System.out.println(i + "번째 반복");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 	//public void method3() {
