@@ -1,6 +1,6 @@
 package com.kh.run;
 
-import com.kh.array.B_ArraySort;
+import com.kh.array.C_ArrayCopy;
 
 //import com.kh.array.A_Array;
 
@@ -12,15 +12,20 @@ public class Run {
 //		arr.method2();
 //		arr.method5();
 //		arr.method6();
-		B_ArraySort arr = new B_ArraySort();
+//		B_ArraySort arr = new B_ArraySort();
 //		arr.method1();
 //		arr.method2();
 //		arr.method3();
 //		arr.method4();
 //		arr.method5();
 //		arr.method6();
-		arr.method7();
+//		arr.method7();
 //		arr.method8();
+
+		C_ArrayCopy ac = new C_ArrayCopy();
+//		ac.method1();
+//		ac.method2();
+		ac.method3();
 	}
 
 }
