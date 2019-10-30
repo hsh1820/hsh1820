@@ -13,7 +13,14 @@ public class Run {
 //		arr.method5();
 //		arr.method6();
 		B_ArraySort arr = new B_ArraySort();
-		arr.method1();
+//		arr.method1();
+//		arr.method2();
+//		arr.method3();
+//		arr.method4();
+//		arr.method5();
+//		arr.method6();
+		arr.method7();
+//		arr.method8();
 	}
 
 }
