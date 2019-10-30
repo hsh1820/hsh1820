@@ -25,7 +25,8 @@ public class Run {
 		C_ArrayCopy ac = new C_ArrayCopy();
 //		ac.method1();
 //		ac.method2();
-		ac.method3();
+//		ac.method3();
+		ac.method4();
 	}
 
 }
