@@ -156,6 +156,7 @@ public class C_ArrayCopy {
 						int[] newArr = new int[arr.length+addSize];
 						// 원본 배열 크기 + 추가 크기 만큼의 새로운 배열 새로 생성
 						System.arraycopy(arr, 0, newArr, 0, arr.length);
+					
 						arr = newArr; // arr의 배열 값, newArr의 참조변수는 쓰레기댐 =GC
 						
 					}
