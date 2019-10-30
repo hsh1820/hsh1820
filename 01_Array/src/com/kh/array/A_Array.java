@@ -170,12 +170,13 @@ public class A_Array {
 		
 		
 		double[] arr = new double[5];
+		// 실수형 배열 height 5칸 선언 및 할당
 		double tall =0;
 		double avg =0;
 		
 		//배열에 저장부
 		for(int i =0; i < arr.length ; i++) {
-			System.out.print( i+" 번째 키 입력 : ");
+			System.out.print( i+1 +" 번째 키 입력 : ");
 			tall = sc.nextDouble();
 				arr[i] = tall;
 				avg += tall;
@@ -183,9 +184,22 @@ public class A_Array {
 
 		avg /= arr.length;
 		
-		System.out.print("평균 키 : "+avg);
+		System.out.println("평균 키 : "+avg);
+		System.out.print("배열 안에 있는 값  : ");
+
+		for(int i =0; i < arr.length ; i++) {
+			System.out.print(arr[i]+" ");			
+		}
+
 		
 		}
+	
+	
+	
+	
+	
+	
+	
 		
 	}
 	
