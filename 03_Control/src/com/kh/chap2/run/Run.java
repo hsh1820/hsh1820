@@ -17,12 +17,12 @@ public class Run {
 		//f.method10();
 		//f.method11();
 		B_While bw = new B_While();
-		//bw.method1();
+bw.method1();
 		//bw.method2();
 		//bw.method3();
 		//bw.method4();
 		//bw.method5();
 		//bw.method6();
-		bw.method7();
+//		bw.method7();
 	}
 }
