@@ -231,23 +231,23 @@ public void method6() {
 	
 	
 		public void method8() {
-	int[] arr = {7,1,5,3,4,2,6};
-	
-	for(int i = arr.length-1 ; i>0; i--) {
-		
-		for(int j=0; j<i;j++) {
-			if(arr[i] > arr[j+1]) {
-				int temp = arr[i];
-				arr[i] = arr[j+1];
-				arr[j+1] = temp; 
+			int[] arr = {7,1,5,3,4,2,6};
+			
+			for(int i = arr.length-1 ; i>0; i--) {
+				
+				for(int j=0; j<i;j++) {
+					if(arr[i] > arr[j+1]) {
+						int temp = arr[i];
+						arr[i] = arr[j+1];
+						arr[j+1] = temp; 
+					}
+				}
 			}
+			System.out.println(Arrays.toString(arr));
+			
+			for(int i = 0; i < arr.length;i++) {
+				System.out.print(arr[i] + " ");
 		}
-	}
-	System.out.println(Arrays.toString(arr));
-	
-	for(int i = 0; i < arr.length;i++) {
-		System.out.print(arr[i] + " ");
-	}
 	
 	}
 		
