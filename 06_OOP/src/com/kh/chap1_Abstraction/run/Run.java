@@ -1,5 +1,7 @@
 package com.kh.chap1_Abstraction.run;
 
+import com.kh.chap1_Abstraction.model.vo.Person;
+
 public class Run {
 	public static void main(String[] args) {
 		/*
@@ -24,5 +26,32 @@ public class Run {
 		 * 불필요한 부분을 제거해 나가는 과정
 		 * 
 		 * */
+		// 객체 생성 
+		// * Class == 사용자 정의 자료형 ==> 클래스명이 자료형이됨
+		Person person = new Person();
+		// 자료형   변수명      => Heap 에 Person 자료형 공간 할당 == 각 속성들에는 인덱스 없음 == .으로 필드 직접 접근
+		// person에는 
+		// 주소값 저장(= 참조형변수)
+		// => (stack) 
+		
+		person.pNo = "000101-1234567";
+		person.name = "홍길동";
+		person.gender = '남';
+		person.address = "서울시 중구 남대문로	120 대일빌딩 2층	";
+		person.phone = "010-1234-5678";
+		person.age=20;
+		
+		System.out.println("이름 : " + person.name);
+		System.out.println("주민등록번호 : " + person.pNo);
+		System.out.println("성별 : " + person.gender);
+		System.out.println("나이 : " + person.age);
+		System.out.println("전화번호 : " + person.phone);
+		System.out.println("주소 : " + person.address);
+		
+		
+		
+		
+		
+		
 	}
 }
