@@ -97,5 +97,5 @@ public class Account {
 		 System.out.println(name + "´ÔÀÇ °èÁÂ¿¡ " + money + "¿øÀÌ ÀÔ±İµÊ.");
 	 }
 	  
-
+	 
 }

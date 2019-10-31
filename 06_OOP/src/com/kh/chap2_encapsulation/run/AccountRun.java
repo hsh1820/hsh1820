@@ -1,6 +1,7 @@
 package com.kh.chap2_encapsulation.run;
 
 import com.kh.chap1_Abstraction.model.vo.Account;
+import com.kh.chap3_field.model.vo.Korean;
 
 public class AccountRun {
 	public static void main(String[] args) {
@@ -31,6 +32,9 @@ public class AccountRun {
 		acc.setAccountNumber("01012345678");
 		acc.setBalance(100000000);
 		acc.setBankCode(0111); // 0 은 8진수, 0x 16진수
+		
+		System.out.println(Korean.nCode);
+		
 		
 		System.out.println("계좌 정보");
 		System.out.println(acc.getName());
