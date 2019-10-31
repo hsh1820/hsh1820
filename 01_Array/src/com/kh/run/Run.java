@@ -1,9 +1,5 @@
 package com.kh.run;
 
-import java.util.Arrays;
-
-import com.kh.array.C_ArrayCopy;
-
 //import com.kh.array.A_Array;
 
 public class Run {
@@ -24,11 +20,13 @@ public class Run {
 //		arr.method7();
 //		arr.method8();
 
-		C_ArrayCopy ac = new C_ArrayCopy();
+//		C_ArrayCopy ac = new C_ArrayCopy();
 ////		ac.method1();
 ////		ac.method2();
 ////		ac.method3();
-		ac.method4();
+//		ac.method4();
+//		ArrayPractice ap = new ArrayPractice();
+//		ap.method16();
 	}
 
 }
