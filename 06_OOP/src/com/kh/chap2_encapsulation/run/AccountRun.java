@@ -30,7 +30,7 @@ public class AccountRun {
 		acc.setPassword("password");
 		acc.setAccountNumber("01012345678");
 		acc.setBalance(100000000);
-		acc.setBankCode(0111);
+		acc.setBankCode(0111); // 0 은 8진수, 0x 16진수
 		
 		System.out.println("계좌 정보");
 		System.out.println(acc.getName());
@@ -40,6 +40,7 @@ public class AccountRun {
 		System.out.println(acc.getPassword());
 		
 		acc.deposit(1000000000);
+		
 		System.out.println(acc.getBalance());
 		
 		
