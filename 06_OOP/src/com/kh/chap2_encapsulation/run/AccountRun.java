@@ -1,5 +1,7 @@
 package com.kh.chap2_encapsulation.run;
 
+import com.kh.chap1_Abstraction.model.vo.Account;
+
 public class AccountRun {
 	public static void main(String[] args) {
 		
@@ -14,6 +16,31 @@ public class AccountRun {
 		 * == getter / setter 메소드
 		 * 
 		 * */
+		
+		Account acc = new Account(); // 생성자
+		// 생성자 : 객체 생성 시 초기 필드값과 
+		//  		  생성되자마자 수행할 기능을 작성하는 부분
+		
+		//acc.name = "홍길동";
+		//The field Account.name is not visible 
+		// Account 객체 내부의 name 필드가 private 이므로
+		// 외부 직접 접근 불가 --> 간접 접근 방법 사용
+		
+		acc.setName("홍길동");
+		acc.setPassword("password");
+		acc.setAccountNumber("01012345678");
+		acc.setBalance(100000000);
+		acc.setBankCode(0111);
+		
+		System.out.println("계좌 정보");
+		System.out.println(acc.getName());
+		System.out.println(acc.getAccountNumber());
+		System.out.println(acc.getBalance());
+		System.out.println(acc.getBankCode());
+		System.out.println(acc.getPassword());
+		
+		acc.deposit(1000000000);
+		System.out.println(acc.getBalance());
 		
 		
 	}
