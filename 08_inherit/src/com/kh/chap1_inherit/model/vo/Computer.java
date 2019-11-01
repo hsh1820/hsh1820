@@ -11,9 +11,21 @@ public class Computer extends Product{
 	private String cpu;
 	
 	public Computer() {
-		
+		super();
 	}
-
+	
+	// 매개 변수 있는 생성자
+	// Computer 자신의 필드 + 상속받은 피드 모두 초기화
+	public Computer(int hdd, int ram, String cpu, String brand, String name, String pCode, int price) {
+		super(brand, name, pCode, price);
+		this.setBrand(brand);
+		super.setBrand(brand);
+		
+		this.hdd = hdd;
+		this.ram = ram;
+		this.cpu = cpu;
+	}
+	
 	public int getHdd() {
 		return hdd;
 	}

@@ -7,10 +7,13 @@ public class Product {
 	private int price ;
 	
 	public Product() {
-		
+		super();
+		// 현재 클래스가 객체로 생성될 때
+		// 객체 내부에 부모의 기본적인 형태의 객체를 생성하라는 구문		
 	}
 	
 	public Product(String brand, String name, String pCode, int price) {
+		super();
 		this.brand = brand;
 		this.name = name;
 		this.pCode = pCode;
