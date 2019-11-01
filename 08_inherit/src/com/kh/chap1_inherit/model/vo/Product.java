@@ -56,4 +56,10 @@ public class Product {
 	public String inform() 	{
 		return brand + ", "+ name + ", "+ pCode + ", "+ price;
 	}
+	// final 키워드 확인용 메소드
+	public void print() {
+		System.out.println("오버라이딩 해봐라.");
+	}
+	
+	
 }

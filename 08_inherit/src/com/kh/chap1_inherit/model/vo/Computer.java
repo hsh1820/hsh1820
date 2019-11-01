@@ -1,7 +1,8 @@
 package com.kh.chap1_inherit.model.vo;
 
-public class Computer extends Product{
-									// -> 확장하다 
+		// 상속 불가 클래스
+public final class Computer extends Product{
+											 // -> 확장하다 
 	// 부모 클래스의 멤버를 가져와서
 	// 자식 클래스의 멤버에 포함시켜
 	// 자식의 크기를 확장 -> 상속
@@ -50,7 +51,17 @@ public class Computer extends Product{
 		this.cpu = cpu;
 	}
 	
+	@Override
 	public String inform() {
-		return cpu + ", " + hdd + ", " +  ram;
+		
+		
+		return super.inform()+", "+cpu + ", " + hdd + ", " +  ram;
 	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		System.out.println("오버라이딩 했는데?");
+	}
+	
 }
