@@ -16,6 +16,7 @@ public class BookRun {
 		System.out.printf(b1.inform());
 		System.out.println("============================");
 		
+		
 		System.out.println("도서명 = " + b1.getTitle());
 		System.out.println("할인된 가격 = " + (int)(b1.getPrice() - b1.getDiscountRate()*b1.getPrice())+ "원");
 		System.out.println("도서명 = " + b2.getTitle());

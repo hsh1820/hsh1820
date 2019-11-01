@@ -48,6 +48,8 @@ public class Book {
 	
 	
 	public String inform() {
+		
 		return  title + "\t" +price+ "\t" + discountRate + "\t" +author+"\n";
+		
 	}
 }
