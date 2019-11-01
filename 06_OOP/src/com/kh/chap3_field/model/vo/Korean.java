@@ -29,7 +29,7 @@ public class Korean {
 	public Korean() { // 인스턴스 변수 초기화 // 반환형 없음
 		
 	}
-
+	
 	//메소드
 	 public void setAge(int age) {
 		 this.age = age;
