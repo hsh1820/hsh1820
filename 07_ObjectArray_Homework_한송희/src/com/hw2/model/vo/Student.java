@@ -64,6 +64,6 @@ public class Student {
 	
 	
 	public String information()	{
-		return "";
+		return grade + "\t" + classroom + "\t" +  name + "\t" + kor+ "\t" + eng+ "\t" + math;
 	}
 }

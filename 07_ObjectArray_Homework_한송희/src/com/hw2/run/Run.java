@@ -9,8 +9,12 @@ public static void main(String[] args) {
 	Student[] st = new Student[10];
 	Scanner sc = new Scanner(System.in);
 	int count = 0;
+	int hap = 0;
+
 	
 	while(true)	{
+		st[count] = new Student();
+		
 		System.out.print("학년 : ");
 		st[count].setGrade(sc.nextInt());
 		System.out.print("반 : ");
@@ -26,8 +30,25 @@ public static void main(String[] args) {
 		st[count].setMath(sc.nextInt());
 		sc.nextLine();
 		
+		hap = (st[count].getKor() +st[count].getEng()+st[count].getMath());
 		count++;
+		
 		System.out.print("추가하시겠습니까? (Y/N) : ");
+		char yn = sc.next().charAt(0);
+			if(yn=='y' || yn=='Y') {
+				continue;
+			}else {
+				for(int i = count;i<st.length;i++) {
+					st[i] = new Student(0, 0, null, 0, 0, 0);
+				}
+				break;
+			}
+		}//while end
+	System.out.println("학년\t"+"반\t"+"이름\t"+"국어점수\t"+"영어점수\t"+"수학점수\t"+"평균");
+	for(int i = 0;i<count;i++) {
+		System.out.println(st[i].information()+"\t"+hap/3);
+		
 		}
+	
 	}
 }
