@@ -223,4 +223,30 @@ public class DimensionPractice {
 	//	c d e f g h
 	//	i j k
 	//	l m n o p 
+	public void practice7() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("행의 크기 : ");
+		int row = sc.nextInt();
+		int col = 0;
+		char alpha = 'a';
+		
+		char[][] arr = new char[row][];
+		for(int i = 0 ;i<row;i++) {
+			System.out.print(i+ "열의 크기 : ");
+			col = sc.nextInt();			
+			arr[i] = new char[col];
+		}
+		for(int i = 0; i<arr.length;i++) {
+			for(int j=0; j<arr[i].length;j++) {
+				arr[i][j] = alpha;
+				alpha++;
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	
+	
 }

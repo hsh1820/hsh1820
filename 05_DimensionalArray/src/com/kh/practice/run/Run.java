@@ -10,6 +10,7 @@ public static void main(String[] args) {
 //	dp.practice3();
 //	dp.practice4();
 //	dp.practice5();
-	dp.practice6();
+//	dp.practice6();
+	dp.practice7();
 	}
 }
