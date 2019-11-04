@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.controller.PolyController"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.model.vo.Parent"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.model.vo.Child1"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.model.vo.Child2"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.model.vo.Electronic"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.model.vo.Computer"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.model.vo.Tablet"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.controller.ElectronicController"/>
+<fullyQualifiedTypeName name="com.kh.chap1_poly.view.ElectronicView"/>
+</qualifiedTypeNameHistroy>

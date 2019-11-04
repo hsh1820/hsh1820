@@ -21,7 +21,13 @@
 	</section>
 	<section name="GitCommitMessageComponent">
 		<list key="C:\Users\user1\git\hsh1820\.git">
-			<item value="empty"/>
+			<item value="false"/>
+			<item value="user1 &lt;user1@user1-PC&gt;"/>
+			<item value="&#x0D;&#x0A;11/4&#x0D;&#x0A;Change-Id: I0000000000000000000000000000000000000000&#x0D;&#x0A;"/>
+			<item value="user1 &lt;user1@user1-PC&gt;"/>
+			<item value="6197c922f98b9fba687997f1c35e489dbd619000"/>
+			<item value="0"/>
+			<item value="false"/>
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
@@ -54,5 +60,13 @@
 	</section>
 	<section name="PushToGerritPage">
 		<item key="Repository[C:\Users\user1\git\hsh1820\.git].lastUri" value="https://github.com/hsh1820/hsh1820.git"/>
+		<item key="Repository[C:\Users\user1\git\hsh1820\.git].lastBranch" value="master"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.merge.MergeResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="635"/>
+		<item key="DIALOG_Y_ORIGIN" value="396"/>
+		<item key="DIALOG_WIDTH" value="666"/>
+		<item key="DIALOG_HEIGHT" value="198"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>
