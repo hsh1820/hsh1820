@@ -23,6 +23,8 @@ public class Child1 extends Parent {
 		this.str = str;
 	}
 	
-	
+	public void printChild() {
+		System.out.println("Child1 객체의 printChild() 메소드 호출");
+	}
 	
 }
