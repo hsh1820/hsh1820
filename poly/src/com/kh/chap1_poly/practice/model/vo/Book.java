@@ -40,8 +40,9 @@ public class Book {
 		this.publisher = publisher;
 	}
 
+	@Override
 	public String toString() {
-		return "";
+		return "[ Book [title=" + title + ", author=" + author + ", publisher=" + publisher + "]";
 	}
 	
 }
