@@ -1,5 +1,10 @@
 package com.kh.chap1_list.part1.model.vo;
 
+// MVC Model 2 에서 Model의 의미
+/*	컨트롤러에서 전달받은 내용에 따라 상태를 변경하거나
+ * 요청된 비즈니스 로직을 처리하는 부분
+ * */
+
 public class Student {
 	private String name;
 	private int score;
