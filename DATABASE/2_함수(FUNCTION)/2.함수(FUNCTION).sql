@@ -118,9 +118,10 @@ FROM EMPLOYEE;
 -- 1. EMPLOYEE 테이블에서 사원명, 입사일-오늘, 오늘-입사일 조회
 -- 단, 별칭은 근무일수1, 근무일수2로 하고
 -- 모두 정수처리, 양수가 되도록 처리
-SELECT EMP_NAME,TRUNC(ABS (hire_date-SYSDATE)) AS 근무일수1, 
-TRUNC(ABS(SYSDATE-HIRE_DATE)) AS 근무일수2
+SELECT EMP_NAME, ABS(FLOOR(hire_date-SYSDATE)) AS 근무일수1, 
+FLOOR(ABS(SYSDATE-HIRE_DATE)) AS 근무일수2
 FROM EMPLOYEE;
+-- 내림 먼저하고 절대값으로 변경시 절대값 변경후 내림한 값과 +1 차이있음
 
 -- 2. EMPLOYEE 테이블에서 사번이 홀수인 직원들의 정보 모두 조회
 SELECT * 
@@ -131,8 +132,171 @@ WHERE MOD(TO_NUMBER(EMP_ID),2)=1;
 -- 3. EMPLOYEE 테이블에서 근무 년수가 20년(240개월) 이상인 직원 정보 조회
 SELECT *
 FROM employee
-WHERE TRUNC(MONTHS_BETWEEN(SYSDATE,hire_date)) > 240;
+WHERE TRUNC(MONTHS_BETWEEN(SYSDATE,hire_date)) >= 240;
 
--- 4. EMPLOYEE 테이블에서 사원명, 입사일, 입사한 월의 남은 근무일수를 조회
-SELECT EMP_NAME, hire_date, LAST_DAY( HIRE_DATE)-hire_date 
+SELECT *
+FROM employee
+WHERE ADD_MONTHS(hire_date,240) < SYSDATE ;
+
+-- 4. EMPLOYEE 테이블에서 사원명, 입사일, 입사한 월의 근무일수를 조회
+SELECT EMP_NAME, hire_date, LAST_DAY( HIRE_DATE)-hire_date AS 입사월의근무일수
 FROM EMPLOYEE;
+EXTRACT(DAY FROM LAST_DAY(hire_date)) - EXTRACT(DAY FROM HIRE_DATE);
+
+-- 날짜 포맷 변경
+-- DDL구문
+ALTER SESSION SET NLS_DATE_FORMAT = 'RR/MM/DD';
+
+----------------------------------------------------------------------
+
+-- 4. 형변환 함수
+-- TO_CHAR( 날짜 | 숫자[, FORMAT]) 
+---> 날짜 또는 숫자형 데이터를 문자형 데이터로 변경
+----> FORMAT이 지정되어있으면 해당 포맷 형태로 변경
+SELECT TO_CHAR(1234) FROM DUAL;
+SELECT TO_CHAR(1234, '99999') FROM DUAL;
+-- 5칸을 지정 후 오른쪽 정렬, 빈칸은 공백을 채움
+SELECT TO_CHAR(1234, '00000') FROM DUAL;
+
+
+SELECT TO_CHAR(1234, '$99999') FROM DUAL;
+-- 5칸 오른쪽정렬 현재 설정된 나라의 화폐단위 반환
+
+-- 자릿수 콤마로 구분
+SELECT TO_CHAR(1234, 'L999,999,999') FROM DUAL;
+
+SELECT TO_CHAR(1234, '000,000,000') FROM DUAL;
+
+SELECT TO_CHAR(1000, '9.9EEEE') FROM DUAL;
+
+SELECT TO_CHAR(1234,'999') FROM DUAL;
+--> 설정한 포맷의 범위를 넘어 선 경우 #으로 출력됨
+
+-- EMPLOYEE 테이블에서
+-- 사원명, 급여 조회
+-- 단, 급여는 '\9,000,000'형식으로 표시할 것
+SELECT EMP_NAME, TO_CHAR(salary, 'L9,000,000') "급여"
+FROM EMPLOYEE;
+
+------------------------------------------------------------------------------------------
+-- 날짜 데이터에 포맷 적용하기
+SELECT TO_CHAR(SYSDATE, 'AM HH:MI:SS') FROM DUAL;
+-- AM, PM 은 오전, 오후의 표기식 지정이지 결국 SYSDATE 기준으로 출력해줌
+
+SELECT  TO_CHAR(SYSDATE,'YYYY-MM-DD PM HH:MI:SS') FROM DUAL;
+SELECT  TO_CHAR(SYSDATE,'YYYY-MM-DD DAY HH:MI:SS') FROM DUAL;
+SELECT  TO_CHAR(SYSDATE,'YYYY-MM-DD DY HH:MI:SS') FROM DUAL;
+SELECT TO_CHAR(SYSDATE, 'YEAR, Q') ||'분기' FROM DUAL;
+
+-- EMPLOYEE 테이브에서
+-- 모든 사원의 이름, 고용일 조회
+-- 단 , 고용일은 '2019-11-14' 형식으로 조회할 것
+SELECT EMP_NAME, TO_CHAR(hire_date,'YYYY"년"MM"월"DD"일"') 고용일  
+FROM EMPLOYEE;
+
+------------------------------------------------------------------------------------
+-- TO_DATE : 문자 또는 숫자형 데이터를 날짜형으로 변환
+SELECT TO_DATE('20191114') FROM DUAL;
+SELECT TO_DATE('20191114','YYYYMMDD') FROM DUAL;
+SELECT TO_DATE(20191114,'YYYYMMDD') FROM DUAL;
+
+SELECT TO_DATE('191114','YYMMDD') FROM DUAL;
+
+SELECT TO_CHAR(TO_DATE('191114','YYMMDD'),'YYYY-MM-DD') FROM DUAL;
+
+SELECT TO_DATE('981114','YYMMDD') FROM DUAL;
+SELECT TO_CHAR(TO_DATE('981114','YYMMDD'),'YYYY-MM-DD') FROM DUAL;-- 2000년도가 기준
+SELECT TO_CHAR(TO_DATE('981114','RRMMDD'),'RRRR-MM-DD') FROM DUAL; -- 1900년도가 기준
+
+-- EMPLOYEE 테이블에서
+-- 2000년도 부터 입사한 사원의 
+-- 사번, 이름, 입사일 조회
+SELECT EMP_ID, EMP_NAME, hire_date
+FROM EMPLOYEE
+WHERE hire_date >= TO_DATE('000101', 'YYMMDD');
+
+-------------------------------------------------------------------------------
+-- TO_NUMBER
+SELECT TO_NUMBER('123456789') FROM DUAL;
+SELECT '100' + '100' FROM DUAL;
+-- 문자값 내부에 숫자만 존재하므로
+-- 오라클이 자동으로 숫자로 형변환이 가능함
+SELECT '1,000' + '1,000' FROM DUAL;
+-- 문자값 내부가 숫자 + 문자의 형태로 자동 형변환 불가
+
+SELECT TO_NUMBER('1,000', '9,999') + TO_NUMBER('1,000', '9,999') FROM DUAL;
+
+-------------------------------------------------------------------------------
+-- 5. NULL 처리 함수
+-- NVL( 컬럼명, 컬럼값이 NULL일 때 변경할 값)
+SELECT EMP_NAME, NVL( BONUS,0)
+FROM EMPLOYEE;
+
+SELECT EMP_NAME, (SALARY*12) + (SALARY*12*NVL(BONUS,0) ) AS 총수령액
+FROM EMPLOYEE;
+
+
+ -- NVL2 (컬럼명, 변경값1, 변경값2)
+-- 해당 컬럼에 값이 있으면 변경값1로 변경
+-- 해당 컬럼이 NULL 이면 변경값2로 변경
+
+-- EMPLOYEE 테이블에서
+-- 기존 보너스를 받던 사원의 보너스를 0.8로
+-- 보너스를 받지 못했던 사원의 보너스를 0.3으로 변경하여
+-- 이름, 기존 보너스, 변경된 보너스 조회
+SELECT EMP_NAME, BONUS, NVL2(BONUS, 0.8 , 0.3) 
+FROM EMPLOYEE;
+
+-- NULLIF (비교대상1, 비교대상2)
+-- 두 개의 값이 동일하면 NULL, 다르면 비교대상1 반환
+SELECT NULLIF('123','2123') FROM DUAL;
+
+SELECT TO_CHAR(SYSDATE, 'MM'),
+       TO_CHAR(SYSDATE, 'MONTH'),
+       TO_CHAR(SYSDATE, 'MON'),
+       TO_CHAR(SYSDATE, 'RM')
+FROM DUAL;
+
+SELECT TO_CHAR(SYSDATE, 'YYYY'), TO_CHAR(SYSDATE, 'RRRR'),
+       TO_CHAR(SYSDATE, 'YY'), TO_CHAR(SYSDATE, 'RR'),
+       TO_CHAR(SYSDATE, 'YEAR')
+FROM DUAL;
+
+
+
+-- 함수 연습 문제
+
+--1. EMPLOYEE 테이블에서
+--  직원명과 주민번호를 조회
+--  단, 주민번호 9번째 자리부터 끝까지는 '*'문자로 채움
+--  예 : 홍길동 771120-1******
+-- HINT. 연결 연산자
+SELECT EMP_NAME,  SUBSTR(EMP_NO,1,8)|| '******' AS 주민번호
+FROM EMPLOYEE;
+--2. EMPLOYEE 테이블에서
+--  직원명, 직급코드, 연봉(원) 조회
+--  단, 총수령액은 ￦57,000,000 으로 표시
+--  (총수령액은 보너스가 적용된 1년치 급여)
+SELECT EMP_NAME, JOB_CODE, TO_CHAR((SALARY*12*BONUS),'L999,999,999')
+FROM EMPLOYEE;
+-- 3. EMPLOYEE 테이블에서
+--   부서코드가 D5, D9인 직원들 중에서 2004년도에 입사한 직원의 
+--   사번 사원명 부서코드 입사일 조회
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, hire_date
+FROM EMPLOYEE
+WHERE (DEPT_CODE = 'D5' OR DEPT_CODE = 'D9') AND
+(HIRE_DATE > '040101') AND (HIRE_DATE < '041231');
+-- 4. EMPLOYEE 테이블에서
+--   직원명, 입사일, 입사한 달의 근무일수 조회
+--   단, 입사한 날도 근무일수에 포함해서 +1 할 것
+SELECT EMP_NAME, HIRE_DATE,  (LAST_DAY( HIRE_DATE)-hire_date)+1 AS "근무일수 +1"
+FROM EMPLOYEE;
+--5. EMPLOYEE 테이블에서
+--  직원명, 부서코드, 생년월일, 나이(만) 조회
+--  단, 생년월일은 주민번호에서 추출해서, 
+--  ㅇㅇ년 ㅇㅇ월 ㅇㅇ일로 출력되게 함.
+--  나이는 주민번호에서 추출해서 날짜데이터로 변환한 다음, 계산
+SELECT EMP_NAME, DEPT_CODE,  TO_CHAR(TO_DATE(SUBSTR(EMP_NO,1,6), 'RRMMDD'),'RR"년"MM"월"DD"일"') AS 생년월일, ROUND(MONTHS_BETWEEN(SYSDATE,TO_DATE(SUBSTR(EMP_NO,1,6),'RRMMDD'))/12) AS 나이
+FROM EMPLOYEE;
+
+SELECT * FROM EMPLOYEE;
